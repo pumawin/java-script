@@ -1,0 +1,73 @@
+@charset 'utf-8';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  padding: 5vw;
+  line-height: 2;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+a:hover {
+  text-decoration: none;
+  color: #f39;
+}
+
+/* 다크모드 적용 */
+body.dark {
+  background: #333;
+  color: #fff;
+}
+body.dark a:hover {
+  color: skyblue;
+}
+
+/* 체크박스 디자인 */
+.mode-wrap {
+  position: absolute;
+  top: 50px;
+  right: 50px;
+}
+
+#mode {
+  display: none;
+}
+#mode + label {
+  background: #ff5;
+  position: relative;
+  display: block;
+  text-align: center;
+  cursor: pointer;
+}
+#mode + label::before {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 30px;
+  border: 1px solid #000;
+  border-radius: 30px;
+}
+#mode + label::after {
+  content: '';
+  display: block;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #000;
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  transition: 0.4s;
+}
+
+/* 체크박스가 체크된 상태일때 */
+#mode:checked + label::after {
+  left: calc(100% - 31px);
+}

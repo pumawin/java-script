@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>다크모드 구현 : if/else 사용</title>
+    <style>
+      body {
+        background: #fff;
+      }
+      /* 다크모드 */
+      body.dark {
+        background: #333;
+      }
+      body.dark .wrap {
+        border-color: #fff;
+        color: #888;
+      }
+      body.dark .wrap a {
+        background: #fff;
+        color: #333;
+      }
+      .wrap {
+        width: 70%;
+        margin: 0 auto;
+        padding: 5vw;
+        border: 10px solid #000;
+      }
+      .wrap a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 150px;
+        height: 50px;
+        border: 1px solid #000;
+        border-radius: 30px;
+        /* tdn+bg#fff+fwb */
+        text-decoration: none;
+        background: #333;
+        color: #fff;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- .wrap>a+p -->
+    <div class="wrap">
+      <a href="#">모드변경</a>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem qui incidunt quo, nisi dignissimos similique laudantium suscipit sit asperiores, sequi tempora dolor, voluptatibus facilis illum
+        aliquid nesciunt perferendis? Optio, soluta. Ad, dolor rem hic iusto iure ut optio ipsa accusamus aperiam, at beatae non perferendis exercitationem distinctio nobis expedita placeat animi,
+        alias iste sit. Quam quia ipsum ab voluptatem, reprehenderit ipsa optio consequuntur sequi sit odio deleniti laudantium at, accusamus commodi iusto qui rerum excepturi in voluptatibus eligendi
+        reiciendis earum. Voluptatibus veritatis quos sequi consequatur itaque, excepturi eveniet adipisci odio placeat repellat et blanditiis reprehenderit, veniam magni, dolorum aut fugit voluptates
+        facere expedita necessitatibus dicta ea! Ipsa iusto delectus eligendi quidem nulla ullam sed quae illum debitis? Alias repellendus debitis voluptatum soluta sunt velit aliquam nam modi iusto
+        ea blanditiis laborum voluptates, omnis mollitia, rerum laudantium ab iure culpa. Debitis modi, atque laudantium dolores omnis voluptatibus nostrum unde, facilis deserunt ea, mollitia nemo
+        enim officia ipsam. Ipsa deleniti sit, rerum corporis quo voluptatum nihil aperiam mollitia labore. Fuga doloribus, quidem aperiam quia sed nobis molestiae deserunt adipisci eos culpa? Rerum,
+        necessitatibus quidem repellendus odio eligendi atque enim ea voluptate fuga itaque sequi, optio animi officiis ratione aperiam eaque mollitia sapiente quae assumenda? Tempore quos quis autem
+        sapiente tempora provident commodi numquam accusamus. Nam, sequi. Molestiae ducimus iure eaque velit cum rerum sunt error labore id. Alias debitis ipsum sapiente at eligendi dolorem non
+        aspernatur expedita molestiae accusamus, pariatur sunt cupiditate quos dicta quia. Nemo facere quae ratione nesciunt voluptatibus earum architecto quasi odio rerum, vero sint recusandae quos
+        sunt quibusdam aspernatur ducimus dicta modi! Pariatur a, omnis autem earum ab mollitia, quas voluptatum at expedita dolor, odio laudantium enim corrupti aperiam. Recusandae dolore ullam
+        inventore consequuntur rerum necessitatibus nisi veritatis quasi cumque architecto, magni mollitia fugiat dolorum labore explicabo unde quos accusamus commodi reiciendis neque! Rerum alias est
+        aliquam sunt qui dolore vero, itaque fugiat modi fugit ex. Inventore tenetur illum, iste pariatur unde nihil. Adipisci fuga quidem placeat enim quia magni quaerat! Delectus magnam reiciendis
+        ea, accusamus minus corporis quae cupiditate deleniti. Nulla sapiente hic inventore maxime necessitatibus saepe dolore minima delectus itaque veniam perspiciatis totam ipsam quia nobis dicta
+        accusamus fugit mollitia doloremque autem, beatae earum? Tenetur ipsam harum, ipsa eligendi quidem quae at aliquam magni, libero itaque laboriosam dolorem? Ad vel odio, quam ab, beatae totam
+        labore accusamus dolore mollitia provident odit quos suscipit recusandae amet? Est eius asperiores porro dicta velit tenetur, cupiditate molestiae maxime modi esse eum ut atque facilis
+        repellat deleniti sapiente! Doloribus asperiores ipsa ullam id modi aut soluta, harum atque ratione beatae, dolorem dicta sit necessitatibus tempore quos numquam aperiam! Dolorum veniam velit
+        pariatur rem ab? Minima voluptatum tempora iure laboriosam, qui ipsam consequatur aperiam facere saepe? Eligendi, vel provident dicta dolores consequatur praesentium modi rerum magni optio
+        corrupti deserunt nisi distinctio quam libero. Veniam, inventore! Delectus in natus eius, molestiae eum culpa ab perferendis, architecto laboriosam odit nihil voluptas rem. Rerum facere saepe
+        sapiente, optio cum dolorem. Laudantium quo laborum doloribus voluptates sunt dicta expedita non accusamus, necessitatibus, dignissimos eveniet cupiditate atque quis ea pariatur ipsa cum?
+        Dicta, quisquam voluptate? Molestiae consectetur debitis similique accusamus tenetur sed pariatur, voluptatibus facere veritatis ipsa repellendus nemo ipsum odit neque nulla blanditiis quia
+        sapiente harum saepe eveniet odio tempora, molestias est quo! Quae facere laudantium quas molestiae iusto sed, nihil, corrupti sapiente quos pariatur vel? Ad, officiis tenetur? Ipsam laborum,
+        praesentium animi nobis consequatur doloremque neque eaque ad dolore nemo nostrum quasi fugiat! Inventore reprehenderit ullam illo sed sunt. Nobis aperiam in saepe aspernatur a. Illo
+        cupiditate, vitae magnam repellat autem iste sapiente illum quo alias et voluptate neque nobis quisquam distinctio consequuntur aliquid aspernatur! Impedit autem velit dolore explicabo, quasi
+        veniam in omnis, hic sed aperiam, debitis mollitia corrupti cupiditate cumque! Labore dolorem quam rem doloribus ut aliquid ea molestiae neque eligendi natus, odit, distinctio quisquam facere
+        voluptatem aut corrupti, beatae quidem similique suscipit ipsum cumque accusamus ab consectetur quas. Ab deserunt vero quod praesentium incidunt porro iure, nulla perspiciatis unde fuga nobis
+        minus natus laborum magnam illum quam ipsum dicta asperiores. Ipsa nisi quaerat, nemo optio, qui expedita explicabo labore vitae neque officiis unde vero placeat nostrum ex! Nam temporibus
+        culpa beatae excepturi optio, deserunt aspernatur porro mollitia rerum, illum voluptate eum quidem doloremque harum a, nostrum amet ipsa nemo obcaecati. Incidunt totam perferendis officiis
+        tempora error blanditiis repellat. Maiores optio tenetur aliquid quis, nisi similique! Ad exercitationem possimus distinctio aliquam, veniam voluptas voluptatibus voluptate et veritatis minus
+        at quisquam numquam nihil, dolorum commodi officia cum maiores recusandae ab. Neque, blanditiis adipisci error dicta itaque quis fuga velit eius eum laborum voluptates minus optio quas autem
+        nihil maiores, corrupti, voluptatem laudantium debitis consectetur harum reiciendis! Cum dignissimos, fuga labore mollitia voluptatibus excepturi cumque! Soluta perspiciatis, similique modi
+        optio reprehenderit fugiat dolorem quisquam ullam porro, unde eius nulla quasi saepe, perferendis possimus rem esse minima veritatis officia at totam dolores obcaecati aperiam! Deserunt
+        ratione nobis unde quo cupiditate vero voluptatem minima est quisquam ex, consequatur, repellendus natus aspernatur laboriosam exercitationem amet id. Minima saepe quia, eaque molestiae hic
+        rerum recusandae, cum doloribus veritatis, corrupti et qui ipsam non harum autem commodi! At nihil voluptates consequuntur earum ut, aperiam quidem, vitae minus tenetur quas culpa ratione
+        officia architecto exercitationem, quibusdam laborum. Assumenda enim inventore facilis sint eveniet corrupti ducimus modi tempora deserunt! Suscipit fuga quaerat totam laudantium facere alias
+        quasi accusantium dolorem incidunt ipsum impedit adipisci odio, quae cumque architecto vitae blanditiis quam laboriosam cupiditate error perferendis deleniti explicabo vero distinctio?
+        Temporibus impedit, explicabo, ad tenetur numquam dolore nesciunt natus perferendis sint dolores harum, commodi sequi quaerat cum libero. Deleniti quae delectus minus blanditiis aut quisquam,
+        accusantium repudiandae expedita pariatur ea doloribus sit atque nihil quod assumenda eveniet, facere perferendis recusandae nostrum neque commodi doloremque excepturi repellat aliquid?
+        Quibusdam deleniti delectus suscipit laudantium ea totam veritatis, quod quos laborum tempora est aut minima eum doloremque, voluptatum fugiat odit modi hic fugit earum molestiae non? Nemo
+        minima maiores quibusdam reprehenderit consectetur doloremque, nobis quaerat atque.
+      </p>
+    </div>
+    <script>
+      // 대상을 변수에 저장
+      const body = document.body;
+      const changeMode = document.querySelector(".wrap > a");
+      console.log(changeMode);
+
+      //flag 🚩
+      let flag = true;
+
+      // changeMode를 클릭하면
+      changeMode.addEventListener("click", function () {
+        if (flag) {
+          body.classList.add("dark");
+          flag = false;
+        } else {
+          body.classList.remove("dark");
+          flag = true;
+        }
+      });
+    </script>
+  </body>
+</html>

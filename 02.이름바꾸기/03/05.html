@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>배경색 바꾸기 : 헥스코드를 랜덤하게 조합</title>
+    <style>
+      body {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .wrap {
+        width: 40%;
+        padding: 3vw;
+        border: 10px solid #000;
+        background: #fff;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- .wrap>h1+burron.btnChange -->
+    <div class="wrap">
+      <h1>#ffffff</h1>
+      <button class="btnChange">배경색 바꾸기</button>
+    </div>
+    <script>
+      //대상을 변수로 저장
+      const $body = document.body;
+      const $colorCode = document.querySelector('.wrap h1');
+      const $btnChange = document.querySelector('.btnChange');
+      //랜덤하게 뽑아낼 헥스코드 각각의 값을 배열에 저장
+      const hexDigits = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 'A', 'B', 'C', 'D', 'E', 'F'];
+      //$btnChange 버튼을 클릭하면
+      $btnChange.addEventListener('click', function () {
+        let hexColor = '#';
+
+        //기본 아이디어
+        // hexColor += hexDigits[15];
+        // console.log(hexColor);
+        //hexDigits배열에서 랜덤하게 숫자를 6번 뽑아낸다.
+        // = 뽑아내는 동작이 6번 반복된다.
+        for (let i = 1; i <= 6; i++) {
+          // hexColor += hexDigits[i];
+          // console.log(hexColor);
+          //랜덤한 수를 생성하자, 15까지만
+          let randomIdx = Math.floor(Math.random() * hexDigits.length);
+          hexColor += hexDigits[randomIdx];
+          console.log(hexColor);
+
+          //배경색으로 적용
+          $body.style.backgroundColor = hexColor;
+          //innerHTML 속성 : 선택한 요소의 하위 요소를 가져온다. (html의 이름까지 가져온다.)
+          //textContent 속성 : 손택한 요소의 텍스트를 가져온다. (안에 있는 정보만 가져온다.)
+          // console.log(document.querySelector('.wrap').innerHTML);
+          // console.log(document.querySelector('.wrap').textContent);
+
+          //h1의 텍스트를 변경 --> 예: <h1>#f123e2</h1>
+          $colorCode.textContent = hexColor;
+        }
+      });
+      // console.log(Math.random()); //0~0.9999
+      // console.log(Math.random() * 10); //0~9.9999
+      // console.log(Math.random() * 3); // 뽑아내는 숫자
+      // console.log(Math.floor(Math.random() * 3)); // 뽑아내는 숫자
+    </script>
+  </body>
+</html>

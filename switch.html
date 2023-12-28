@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>switch문</title>
+  </head>
+  <body>
+    <script>
+      // const site = prompt('즐겨 사용하는 검색사이트는?');
+      // let url;
+
+      // switch (site) {
+      //   case '다음':
+      //     url = 'www.daum.net';
+      //     break;
+      //   case '네이버':
+      //     url = 'www.naver.com';
+      //     break;
+      //   case '구글':
+      //     url = 'www.google.com';
+      //     break;
+
+      //   default:
+      //     alert('다시 확인해 주세요!');
+      // }
+      // console.log(url);
+      // if (url) location.href = 'https://' + url;
+
+      const fruit = '사과';
+      switch (fruit) {
+        case '사과':
+          console.log('사과는 빨갛다');
+          break;
+        case '바나나':
+          console.log('바나나는 노랗다');
+          break;
+        case '포도':
+          console.log('포도는 보랗다');
+          break;
+        default:
+          console.log('알수 없는 과일입니다.');
+          break;
+      }
+      //내장객체 - 날짜
+      const now = new Date();
+      console.log(now);
+      console.log(now.getDay()); //0-일, 1-월, 2-화, 3-수...
+
+      let task;
+
+      switch (now.getDay()) {
+        case 0:
+          task = '오늘은 일요일! 잠을 실컷 잡시다!';
+          break;
+        case 1:
+        case 2:
+        case 3:
+        case 4:
+        case 5:
+          task = '학원에 나와 열심히 공부하세요!';
+          break;
+
+        case 6:
+          task = '즐거운 토요일 역시 잠을 실컷 잡시다!!';
+          break;
+        default:
+          task = '요일이 확인되지 않았습니다.';
+          break;
+      }
+
+      console.log(task);
+    </script>
+  </body>
+</html>

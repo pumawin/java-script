@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>배경색 바꾸기 - 사용자의 선택</title>
+    <style>
+      li {
+        list-style: none;
+      }
+      body {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .wrap ul {
+        display: flex;
+        gap: 3vw;
+      }
+      .wrap li {
+        display: flex;
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        border: 1px solid #000;
+        cursor: pointer;
+        justify-content: center;
+        align-items: center;
+        font-size: 2rem;
+      }
+      .wrap li:nth-child(1) {
+        background: #baecc0;
+      }
+      .wrap li:nth-child(2) {
+        background: #b584b1;
+      }
+      .wrap li:nth-child(3) {
+        background: #606796;
+      }
+      .wrap li:nth-child(4) {
+        background: #e2b597;
+      }
+      .wrap li:nth-child(5) {
+        background: #affee3;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- .wrap>ul>li*5 -->
+    <div class="wrap">
+      <ul>
+        <li data-color="#BAECC0">#BAECC0</li>
+        <li data-color="#B584B1">#B584B1</li>
+        <li data-color="#606796">#606796</li>
+        <li data-color="#E2B597">#E2B597</li>
+        <li data-color="#AFFEE3">#AFFEE3</li>
+      </ul>
+    </div>
+
+    <script>
+      //대상을 변수에 저장
+      const $body = document.body;
+      const $selectItem = document.querySelectorAll('.wrap ul li');
+      console.log($selectItem);
+      //test
+      // $selectItem[1].style.backgroundColor = 'red';
+
+      //어느 li 선택될 지 모르니 반복해서 세팅
+      // for (let i = 0; i < $selectItem.length; i++) {
+      //   $selectItem[i].addEventListener('click', function () {
+      //     // console.log($selectItem[i]);
+      //     //선택한 li의 data-color 속성의 값을 가져오기
+      //     //가져오기 : getAtrribute('속성명')
+      //     //적용하기 : setAttribute('속성명', 값)
+      //     const color = $selectItem[i].getAttribute('data-color');
+      //     $body.style.backgroundColor = color;
+      //   });
+      // }
+
+      //.forEach(function (item, index) {})
+      $selectItem.forEach(function (item, index) {
+        item.addEventListener('click', function () {
+          console.log(item, index);
+          const color = item.getAttribute('data-color');
+          $body.style.backgroundColor = color;
+        });
+      });
+    </script>
+    <!-- <iframe
+      src="https://www.youtube.com/embed/FysP_YwUtc0?si=yZd4XEgAa_0PEXii"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen
+    ></iframe> -->
+  </body>
+</html>

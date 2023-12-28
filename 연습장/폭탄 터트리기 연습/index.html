@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>숫자 카운트를 버튼으로 제어</title>
+  </head>
+  <body>
+    <style>
+      body {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .wrap {
+        width: 30%;
+        padding: 3vw;
+        border: solid #000;
+        font-size: 10rem;
+        text-align: center;
+      }
+    </style>
+    <div class="wrap">
+      <div class="info">10</div>
+      <div class="btns">
+        <button type="button" id="go">GO</button>
+        <button type="button" id="stop">STOP</button>
+      </div>
+    </div>
+    <script>
+      const $info = document.querySelector('.info');
+      const $go = document.querySelector('#go');
+      const $stop = document.querySelector('#stop');
+
+      let timer;
+
+      $go.addEventListener('click', function () {
+        timer = setInterval(count, 1000);
+      });
+      $stop.addEventListener('click', function () {
+        clearInterval(timer);
+      });
+
+      let count = 10;
+
+      function counter() {
+        if (count === 0) {
+          console.log('꽝!!');
+          clearInterval(timer);
+          count = 10;
+        } else {
+          count--;
+        }
+        $info.textContent = count;
+      }
+    </script>
+  </body>
+</html>

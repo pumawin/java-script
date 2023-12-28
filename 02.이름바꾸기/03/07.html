@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>객체(object)</title>
+  </head>
+  <body>
+    <script>
+      //객체란 데이터와 데이터에 대한 동작을 함께 묶어서 표현하는 방법
+      //객체 = 데이터와 구문의 집합
+
+      //1. 객체 리터럴
+      const obj = { name: 'john', age: 29 };
+      console.log(obj['name']);
+      console.log(obj.age);
+
+      const arr = ['john', 29]; // 배열
+      console.log(arr[0]); //john
+
+      //2. 생성자 함수
+      const tv = new Object();
+      tv.brand = 'samsung';
+      tv.name = 'paav';
+      tv.price = 8000000;
+      tv.info = function () {
+        console.log('정말 멋진 TV입니다.');
+      };
+
+      console.log(tv['brand'], tv.name);
+      tv.info();
+
+      //객체 만들기
+      const person = {
+        name: '권지민',
+        age: 23,
+        gender: 'female',
+        hobby: ['그림그리기', '노래부르기', '술마시기'],
+        greeting: function () {
+          console.log(`안녕하세요, 저는 ${person.age}살 ${person.name}입니다.`);
+          console.log(`제 취미는 ${this.hobby[0]}입니다.`);
+        },
+      };
+      person.greeting();
+
+      //객체의 속성 추가
+      person.isMarried = false;
+      console.log(person);
+
+      //객체의 속성을 변경
+      person.age = 51;
+      //객체의 속성을 삭제
+      delete person.age;
+      console.log(person);
+
+      //객체의 속성을 순회
+      for (const prop in person) {
+        console.log(prop);
+        console.log(person[prop]);
+      }
+    </script>
+  </body>
+</html>

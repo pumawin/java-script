@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>배경색 바꾸기 : 사용자에게 입력받아서</title>
+  </head>
+  <body>
+    <!-- .wrap>input#colorBox+button:button -->
+    <div class="wrap">
+      <input type="text" id="colorBox" placeholder="원하는 컬러를 헥스코드로 입력하세요. 예: #f59" />
+      <button type="button" class="btnChange">컬러변경!</button>
+    </div>
+    <script>
+      //대상을 변수에 저장
+      const $body = document.body;
+      const coloBox = document.querySelector('#colorBox');
+      const btnChange = document.querySelector('.btnChange');
+      //잘 잡았는지 확인
+      console.log($body, colorBox, btnChange);
+
+      //btnChange을 클릭했을 때
+      btnChange.addEventListener('click', function () {
+        //사용자가 입력한 헥스코드를 받아서
+        let color = colorBox.value;
+        //charAt(인덱스) : 문자열에서 지정한 인덱스에 해당하는 문자 반환
+        console.log(color.charAt(0));
+        if (color === '' || color.charAt(0) !== '#') {
+          colorBox.value = '';
+          colorBox.focus();
+        } else {
+          $body.style.backgroundColor = color;
+        }
+      });
+      //사용자가 입력한 헥스코드를
+      //body에 background-color로 적용
+    </script>
+  </body>
+</html>

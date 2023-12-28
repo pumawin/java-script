@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>배경색 바꾸기 : 정해진 컬러중 랜덤하게</title>
+  </head>
+  <body>
+    <button type="butotn" id="btnChange">배경색 바꾸기</button>
+    <script>
+      //대상을 변수에 저장
+      const $body = document.body;
+      const btnChange = document.querySelector('#btnChange');
+      const color = ['red', 'yellowgreen', '#f59', 'rgba(255, 255, 0, 0.8)', 'skyblue', 'orange'];
+
+      //math 내장객체 학습
+      //1. Math.ceil() : 숫자를 올림한 정수 반환
+      console.log(Math.ceil(5.3)); //6
+      console.log(Math.ceil(4.7)); //5
+      console.log(Math.ceil(-4.7)); //-4
+
+      //2. Math.floor() : 숫자를 내림한 정수 반환
+      console.log(Math.floor(5.3)); //5
+      console.log(Math.floor(4.7)); //4
+      console.log(Math.floor(-4.7)); //-5
+
+      //3. Math.round() : 숫자를 반올림한 정수 반환
+      console.log(Math.round(5.3)); //5
+      console.log(Math.round(4.7)); //5
+      console.log(Math.round(-4.7)); //-5
+
+      //3. Math.random() : 0~1사이의 난수발생(0~0.999999999...)
+      console.log(Math.random());
+      console.log(Math.random() * 10);
+      console.log(Math.floor(Math.random() * 10)); /* 0~9사이 */
+
+      console.log(Math.round(5.3)); //5
+      console.log(Math.round(4.7)); //5
+      console.log(Math.round(-4.7)); //-5
+
+      //btnChange을 클릭하면 배경색 변경
+      // btnChange.addEventListener('click', function () {
+      //   changeColor();
+      // });
+      btnChange.addEventListener('click', changeColor);
+      //반복되는 동작을 함수로 정의
+      function changeColor() {
+        let randomIdx = Math.floor(Math.random() * color.length);
+        //기본 코드
+        console.log(randomIdx);
+        $body.style.backgroundColor = color[randomIdx];
+      }
+
+      //내장함수 - 타이머 함수
+      //타이머 함수 중에서 반복 --> setInterval(동작, 시간)
+      setInterval(changeColor, 1000);
+      // let randomIdx = Math.floor(Math.random() * color.length);
+      // $body.style.backgroundColor = color[randomIdx];
+    </script>
+  </body>
+</html>

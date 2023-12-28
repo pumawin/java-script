@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>다크모드 구현 : 버튼으로 구현</title>
+    <style>
+      body {
+        background: #fff;
+      }
+      body.dark {
+        background: #333;
+      }
+    </style>
+  </head>
+  <body>
+    <button type="button" id="addDark">다크모드 구현</button>
+    <button type="button" id="removeDark">다크모드 해제</button>
+    <button type="button" class="darkMode">다크모드</button>
+
+    <script>
+      // 대상을 변수에 저장 : 코드를 짧고 간결하게 쓸 수 있고, 재사용
+      const $body = document.body;
+      const btnAddDark = document.getElementById("addDark");
+      const btnRemoveDark = document.querySelector("#removeDark");
+      // const btnDark = document.getElementsByClassName("DarkMode");
+      const btnDark = document.querySelector(".darkMode"); /* css선택자 방식 */
+      console.log(btnAddDark, btnDark);
+
+      //1. btnAddDark버튼을 클릭하면 body에 dark클래스 부여
+      // 대상.addEventlistener('이벤트명', 동작);
+      btnAddDark.addEventListener("click", function () {
+        //body에 dark클래스 부여
+        $body.classList.add("dark");
+      });
+      //2. btnRemoveDark버튼을 클릭하면 body에 dark클래스 삭제
+      btnRemoveDark.addEventListener("click", function () {
+        $body.classList.remove("dark");
+      });
+      //3. btnDark를 믈릭하면 dARK클래스를 줬다 뺐다.
+      btnDark.addEventListener("click", function () {
+        $body.classList.toggle("dark");
+      });
+
+      //조건문 if/else 테스트
+      //1. if (조건식) {실행코드}
+      //2. if (조건식) {실행코드1} else {실행코드2}
+      let num = window.prompt("좋아하는 숫자는?");
+
+      if (num % 2 === 0) {
+        console.log("짝수 좋아하는구나!");
+      } else {
+        console.log("홀수 좋아하는구나!");
+      }
+    </script>
+  </body>
+</html>
